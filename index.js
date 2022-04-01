@@ -5,10 +5,10 @@ const cors = require('cors');
 const multer = require('multer');
 const upload = multer();
 // socket stuff
-const io = require('socket.io')(4004, {
-	cors: {
-		origin: [ 'http://localhost:3000' ]
-	}
+const io = require('socket.io')(PROCESS.ENV.SOCKET_PORT, {
+	// cors: {
+	// 	origin: [ 'http://localhost:3000' ]
+	// }
 });
 
 io.on('connection', (socket) => {
